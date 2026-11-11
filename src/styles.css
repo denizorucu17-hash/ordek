@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-reader: "Source Serif 4", Georgia, serif;
+
+  --color-bg: #eef3ef;
+  --color-surface: #f7faf8;
+  --color-raised: #ffffff;
+  --color-ink: #14211c;
+  --color-muted: #5d6d66;
+  --color-line: #d5e0da;
+  --color-primary: #0e7c6b;
+  --color-primary-ink: #f4fbf8;
+  --color-bill: #e2a23a;
+  --color-bill-ink: #3a2a08;
+
+  --radius-lg: 0.9rem;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.tabs {
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.read {
+  font-family: var(--font-reader);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+.read h1,
+.read h2,
+.read h3,
+.read h4 {
+  font-family: var(--font-display);
+  line-height: 1.25;
+  margin: 1.5rem 0 0.6rem;
+}
+
+.read h1 {
+  font-size: 1.75rem;
+}
+
+.read h2 {
+  font-size: 1.4rem;
+}
+
+.read p {
+  margin: 0 0 0.95rem;
+}
+
+.read a {
+  color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+
+.read ul,
+.read ol {
+  margin: 0 0 1rem 1.25rem;
+}
+
+.read li {
+  margin: 0.3rem 0;
+}
+
+.read img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: var(--radius-lg);
+}
+
+.read blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-muted);
+}
+
+.read pre {
+  overflow-x: auto;
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.read table {
+  width: 100%;
+  margin: 0 0 1rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.read td,
+.read th {
+  border-bottom: 1px solid var(--color-line);
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
